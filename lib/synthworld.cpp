@@ -187,8 +187,8 @@ int DestroyMemory() {
 
 
 /*
- * Synthesis as in merlin with synth program and copy_synthesis.sh.
- * Analysis part of training script must match analysis part in copy_synthesis.sh.
+ * Synthesis as in synth.cpp.
+ * Analysis part of training script must match analysis part in copy_synthesis.sh of merlin.
  */
 
 int synthesizeWorld(HTS_GStreamSet * gss, int fs,size_t fperiod, double alpha) {
