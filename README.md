@@ -1,8 +1,8 @@
 # hts-engine-world
 
-This software contains an integration of the WORLD vocoder and the HTS_ENGINE API-1.10.
+This software contains an integration of the WORLD vocoder (https://github.com/mmorise/World) and the HTS_ENGINE API-1.10 (http://hts-engine.sourceforge.net).
 
-The main modification can be found in synthworld.cpp. It implements synthesis as in merlin with synth program and copy_synthesis.sh.
+The main modification can be found in synthworld.cpp.
 
 Use
 
