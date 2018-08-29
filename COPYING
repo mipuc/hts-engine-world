@@ -1,6 +1,7 @@
 /* ----------------------------------------------------------------- */
 /*           The HMM-Based Speech Synthesis Engine "hts_engine API"  */
 /*           with WORLD vocoder                                      */
+/*           https://github.com/mipuc/hts-engine-world               */
 /*                                                                   */
 /* ----------------------------------------------------------------- */
 /*                                                                   */
@@ -127,6 +128,5 @@
 /* OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE           */
 /* POSSIBILITY OF SUCH DAMAGE.                                       */
 /* ----------------------------------------------------------------- */
-
 
 
