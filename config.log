@@ -323,7 +323,7 @@ configure:4622: $? = 0
 configure:4622: result: yes
 configure:4628: checking for _doprnt
 configure:4628: gcc -o conftest -g -O2   conftest.c -lm  >&5
-/tmp/ccE4SmId.o: In function `main':
+/tmp/ccecQiPG.o: In function `main':
 /home/pucher/osxhome/projects/git/hts-engine-world/trunk/conftest.c:59: undefined reference to `_doprnt'
 collect2: error: ld returned 1 exit status
 configure:4628: $? = 1

@@ -77,6 +77,7 @@ void usage(void)
    fprintf(stderr, "    -ow s          : filename of output wav audio (generated speech)         [  N/A]\n");
    fprintf(stderr, "    -ot s          : filename of output trace information                    [  N/A]\n");
    fprintf(stderr, "    -vp            : use phoneme alignment for duration                      [  N/A]\n");
+   fprintf(stderr, "    -w             : use world vocoder                                       [  N/A]\n");
    fprintf(stderr, "    -i  i f1 .. fi : enable interpolation & specify number(i),coefficient(f) [  N/A]\n");
    fprintf(stderr, "    -s  i          : sampling frequency                                      [ auto][   1--    ]\n");
    fprintf(stderr, "    -p  i          : frame period (point)                                    [ auto][   1--    ]\n");

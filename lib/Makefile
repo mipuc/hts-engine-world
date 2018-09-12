@@ -127,7 +127,8 @@ libHTSEngine_a_LIBADD =
 am_libHTSEngine_a_OBJECTS = HTS_audio.$(OBJEXT) HTS_engine.$(OBJEXT) \
 	HTS_misc.$(OBJEXT) HTS_pstream.$(OBJEXT) HTS_sstream.$(OBJEXT) \
 	HTS_model.$(OBJEXT) HTS_vocoder.$(OBJEXT) \
-	HTS_gstream.$(OBJEXT) HTS_label.$(OBJEXT)
+	HTS_gstream.$(OBJEXT) HTS_label.$(OBJEXT) cheaptrick.$(OBJEXT) common.$(OBJEXT) d4c.$(OBJEXT) dio.$(OBJEXT) fft.$(OBJEXT) \
+	matlabfunctions.$(OBJEXT)  stonemask.$(OBJEXT)  synthworld.$(OBJEXT) synthesis.$(OBJEXT) SPTKfunctions.$(OBJEXT) synthesisrealtime.$(OBJEXT)
 libHTSEngine_a_OBJECTS = $(am_libHTSEngine_a_OBJECTS)
 AM_V_P = $(am__v_P_$(V))
 am__v_P_ = $(am__v_P_$(AM_DEFAULT_VERBOSITY))
@@ -141,11 +142,13 @@ AM_V_at = $(am__v_at_$(V))
 am__v_at_ = $(am__v_at_$(AM_DEFAULT_VERBOSITY))
 am__v_at_0 = @
 am__v_at_1 = 
-DEFAULT_INCLUDES = -I.
+DEFAULT_INCLUDES = -I. -I ../include/world
 depcomp = $(SHELL) $(top_srcdir)/config/depcomp
 am__depfiles_maybe = depfiles
 am__mv = mv -f
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+COMPILECPP = $(CPP) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
 AM_V_CC = $(am__v_CC_$(V))
 am__v_CC_ = $(am__v_CC_$(AM_DEFAULT_VERBOSITY))
@@ -195,7 +198,7 @@ AWK = gawk
 CC = gcc
 CCDEPMODE = depmode=gcc3
 CFLAGS = -g -O2
-CPP = gcc -E
+CPP = g++
 CPPFLAGS = 
 CYGPATH_W = echo
 DEFS = -DPACKAGE_NAME=\"hts_engine_API\" -DPACKAGE_TARNAME=\"hts_engine_API\" -DPACKAGE_VERSION=\"1.10\" -DPACKAGE_STRING=\"hts_engine_API\ 1.10\" -DPACKAGE_BUGREPORT=\"hts-engine-users@lists.sourceforge.net\" -DPACKAGE_URL=\"\" -DPACKAGE=\"hts_engine_API\" -DVERSION=\"1.10\" -DHAVE_LIBM=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_VPRINTF=1 -DHAVE_SQRT=1 -DHAVE_STRCHR=1 -DHAVE_STRRCHR=1 -DHAVE_STRSTR=1
@@ -286,14 +289,15 @@ AM_CPPFLAGS = -I ../include
 lib_LIBRARIES = libHTSEngine.a
 libHTSEngine_a_SOURCES = HTS_audio.c  HTS_engine.c  HTS_hidden.h  HTS_misc.c  \
                          HTS_pstream.c  HTS_sstream.c  HTS_model.c  HTS_vocoder.c \
-                         HTS_gstream.c HTS_label.c
+                         HTS_gstream.c HTS_label.c cheaptrick.cpp common.cpp d4c.cpp dio.cpp fft.cpp \
+	matlabfunctions.cpp  stonemask.cpp  synthworld.cpp synthesis.cpp SPTKfunctions.c synthesisrealtime.cpp
 
 DISTCLEANFILES = *.log *.out *~
 MAINTAINERCLEANFILES = Makefile.in
 all: all-am
 
 .SUFFIXES:
-.SUFFIXES: .c .o .obj
+.SUFFIXES: .c .cpp .o .obj
 $(srcdir)/Makefile.in:  $(srcdir)/Makefile.am  $(am__configure_deps)
 	@for dep in $?; do \
 	  case '$(am__configure_deps)' in \
@@ -376,6 +380,17 @@ include ./$(DEPDIR)/HTS_model.Po
 include ./$(DEPDIR)/HTS_pstream.Po
 include ./$(DEPDIR)/HTS_sstream.Po
 include ./$(DEPDIR)/HTS_vocoder.Po
+include ./$(DEPDIR)/cheaptrick.Po
+include ./$(DEPDIR)/common.Po
+include ./$(DEPDIR)/d4c.Po
+include ./$(DEPDIR)/dio.Po
+include ./$(DEPDIR)/fft.Po
+include ./$(DEPDIR)/matlabfunctions.Po
+include ./$(DEPDIR)/stonemask.Po
+include ./$(DEPDIR)/synthworld.Po
+include ./$(DEPDIR)/synthesis.Po
+include ./$(DEPDIR)/SPTKfunctions.Po
+include ./$(DEPDIR)/synthesisrealtime.Po
 
 .c.o:
 	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
@@ -390,6 +405,22 @@ include ./$(DEPDIR)/HTS_vocoder.Po
 #	$(AM_V_CC)source='$<' object='$@' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
 #	$(AM_V_CC_no)$(COMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
+
+.cpp.o:
+	$(AM_V_CC)$(COMPILECPP) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+#	$(AM_V_CC)source='$<' object='$@' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(COMPILE) -c -o $@ $<
+
+.cpp.obj:
+	$(AM_V_CC)$(COMPILECPP) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+#	$(AM_V_CC)source='$<' object='$@' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(COMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
+
+
 
 ID: $(am__tagged_files)
 	$(am__define_uniq_tagged_files); mkid -fID $$unique
