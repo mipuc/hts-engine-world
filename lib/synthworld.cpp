@@ -278,7 +278,7 @@ int synthesizeWorld(HTS_GStreamSet * gss, int fs,size_t fperiod, double alpha) {
     		}
     	//convert mgc frame to spectrum
     	mgc2sp(world_parameters.mgc,mgcdim,alpha,0.0,world_parameters.spec,world_parameters.imag,world_parameters.fft_size);
-    	//copy spectrum to half side spectrogram
+    	//copy spectrum to half side spectrum
     	for (int j = 0; j<specsize;j++){
     		world_parameters.spectrogram[i][j] = pow(exp(world_parameters.spec[j])/32768.0,2.0);
     		//printf("%f\n",world_parameters.spectrogram[i][j]);

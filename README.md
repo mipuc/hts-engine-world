@@ -14,4 +14,6 @@ make
 
 to create bin/hts_engine.
 
+You have to call hts_engine with the option -w to use the WORLD vocoder, otherwise the default vocoder will be used.
+
 Michael Pucher michael.pucher@oeaw.ac.at
