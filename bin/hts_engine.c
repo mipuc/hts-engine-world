@@ -166,6 +166,9 @@ int main(int argc, char **argv)
                exit(1);
             }
             break;
+         case 'w':
+        	HTS_Engine_set_world_flag(&engine, TRUE);
+            break;
          case 'o':
             switch (*(*argv + 2)) {
             case 'w':
