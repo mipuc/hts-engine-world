@@ -78,6 +78,9 @@ void HTS_Engine_initialize(HTS_Engine * engine)
    engine->condition.speed = 1.0;
    engine->condition.phoneme_alignment_flag = FALSE;
 
+   /* world */
+   engine->condition.world_flag = FALSE;
+
    /* spectrum */
    engine->condition.stage = 0;
    engine->condition.use_log_gain = FALSE;
@@ -276,6 +279,14 @@ void HTS_Engine_set_phoneme_alignment_flag(HTS_Engine * engine, HTS_Boolean b)
 {
    engine->condition.phoneme_alignment_flag = b;
 }
+
+/* HTS_Engine_set_world_flag: set flag for using world vocoder */
+void HTS_Engine_set_world_flag(HTS_Engine * engine, HTS_Boolean b)
+{
+   engine->condition.world_flag = b;
+}
+
+
 
 /* HTS_Engine_set_alpha: set alpha */
 void HTS_Engine_set_alpha(HTS_Engine * engine, double f)
@@ -485,7 +496,7 @@ HTS_Boolean HTS_Engine_generate_parameter_sequence(HTS_Engine * engine)
 /* HTS_Engine_generate_sample_sequence: generate sample sequence (3rd synthesis step) */
 HTS_Boolean HTS_Engine_generate_sample_sequence(HTS_Engine * engine)
 {
-   return HTS_GStreamSet_create(&engine->gss, &engine->pss, engine->condition.stage, engine->condition.use_log_gain, engine->condition.sampling_frequency, engine->condition.fperiod, engine->condition.alpha, engine->condition.beta, &engine->condition.stop, engine->condition.volume, engine->condition.audio_buff_size > 0 ? &engine->audio : NULL);
+   return HTS_GStreamSet_create(&engine->gss, &engine->pss, engine->condition.stage, engine->condition.use_log_gain, engine->condition.sampling_frequency, engine->condition.fperiod, engine->condition.alpha, engine->condition.beta, &engine->condition.stop, engine->condition.volume, engine->condition.audio_buff_size > 0 ? &engine->audio : NULL, engine->condition.world_flag);
 }
 
 /* HTS_Engine_synthesize: synthesize speech */

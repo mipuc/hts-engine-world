@@ -273,6 +273,7 @@ typedef struct _HTS_Condition {
 
    /* duration */
    HTS_Boolean phoneme_alignment_flag;  /* flag for using phoneme alignment in label */
+   HTS_Boolean world_flag;  /* flag for using world vocoder */
    double speed;                /* speech speed */
 
    /* spectrum */

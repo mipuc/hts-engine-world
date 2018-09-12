@@ -187,13 +187,13 @@ int DestroyMemory() {
 
 
 /*
- * Synthesis as in synth.cpp.
- * Analysis part of training script must match analysis part in copy_synthesis.sh of merlin.
+ * Synthesis as in merlin with synth program and copy_synthesis.sh.
+ * Analysis part of training script must match analysis part in copy_synthesis.sh.
  */
 
 int synthesizeWorld(HTS_GStreamSet * gss, int fs,size_t fperiod, double alpha) {
 
-	int debug=1;
+	int debug=0;
     // You must set fs and frame_period before analysis/synthesis.
     world_parameters.fs = fs;
     // 5.0 ms is the default value.
