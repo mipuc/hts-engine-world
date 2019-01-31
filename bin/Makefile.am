@@ -1,4 +1,6 @@
 
+CCLD = g++
+
 EXTRA_DIST = Makefile.mak
 
 AM_CPPFLAGS = -I @top_srcdir@/include
