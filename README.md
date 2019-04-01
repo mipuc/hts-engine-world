@@ -22,7 +22,7 @@ You have to call hts_engine with the option -w to use the WORLD vocoder, otherwi
 *year = {2018},*<br/>
 *publisher = {GitHub},*<br/>
 *journal = {GitHub repository},*<br/>
-*howpublished = \{\\url\{ https://github.com/mipuc/hts-engine-world\}\},*<br/>
+*howpublished = \{\\url\{ https://github.com/mipuc/hts-engine-world \}\},*<br/>
 *}*
 
 Michael Pucher michael.pucher@oeaw.ac.at
