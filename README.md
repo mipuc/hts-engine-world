@@ -1,6 +1,6 @@
 # hts-engine-world
 
-This software contains an integration of the WORLD vocoder (https://github.com/mmorise/World) and the hts_engine API-1.10 (http://hts-engine.sourceforge.net). It also uses functions from the Speech Signal Processing Toolkit (SPTK) (http://sp-tk.sourceforge.net/).
+This software contains an integration of the WORLD vocoder (https://github.com/mmorise/World) and hts_engine API-1.10 (http://hts-engine.sourceforge.net). It also uses functions from the Speech Signal Processing Toolkit (SPTK) (http://sp-tk.sourceforge.net/).
 
 The main modification can be found in [lib/synthworld.cpp](lib/synthworld.cpp).
 
@@ -15,5 +15,15 @@ make
 to create bin/hts_engine.
 
 You have to call hts_engine with the option -w to use the WORLD vocoder, otherwise the default vocoder will be used.
+
+@misc{pucher2018,
+  author = {Pucher, Michael},
+  title = {Hts-engine-world: An integration of the WORLD vocoder and hts_engine API-1.10},
+  year = {2018},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/mipuc/hts-engine-world}},
+  commit = {}
+}
 
 Michael Pucher michael.pucher@oeaw.ac.at
