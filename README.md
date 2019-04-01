@@ -16,22 +16,14 @@ to create bin/hts_engine.
 
 You have to call hts_engine with the option -w to use the WORLD vocoder, otherwise the default vocoder will be used.
 
-@misc{pucher2018,
-
-  author = {Pucher, Michael},
-  
-  title = {Hts-engine-world: An integration of the WORLD vocoder and hts_engine API-1.10},
-  
-  year = {2018},
-  
-  publisher = {GitHub},
-  
-  journal = {GitHub repository},
-  
-  howpublished = {\url{https://github.com/mipuc/hts-engine-world}},
-  
-  commit = {}
-  
-}
+*@misc{pucher2018,*<br/>
+*  author = {Pucher, Michael},*<br/>
+*  title = {Hts-engine-world: An integration of the WORLD vocoder and hts_engine API-1.10},*<br/>
+*  year = {2018},*<br/>
+*  publisher = {GitHub},*<br/>
+*  journal = {GitHub repository},*<br/>
+*  howpublished = {\url{https://github.com/mipuc/hts-engine-world}},*<br/>
+*  commit = {}*<br/>
+*}*
 
 Michael Pucher michael.pucher@oeaw.ac.at
