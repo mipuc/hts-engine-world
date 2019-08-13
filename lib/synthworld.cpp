@@ -167,7 +167,7 @@ void WaveformSynthesis3(WorldParameters *world_parameters, int fs,
   DestroySynthesizer(&synthesizer);
 }
 
-int DestroyMemory() {
+void DestroyMemory() {
 
 	delete[] world_parameters.time_axis;
 	delete[] world_parameters.f0;
@@ -365,4 +365,3 @@ int synthesizeWorld(HTS_GStreamSet * gss, int fs,size_t fperiod, double alpha) {
 SYNTHWORLD_C_END;
 
 #endif                       /* !HTS_GSTREAM_C */
-
