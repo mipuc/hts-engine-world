@@ -16,7 +16,7 @@ to create bin/hts_engine.
 
 You have to call hts_engine with the option -w to use the WORLD vocoder, otherwise the default vocoder will be used.
 
-*@misc{pucher2018,*<br/>
+*@misc{pucher2019,*<br/>
 *author = {Pucher, Michael},*<br/>
 *title = {Hts-engine-world: An integration of the WORLD vocoder and hts_engine API-1.10},*<br/>
 *year = {2019},*<br/>
