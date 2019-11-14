@@ -19,7 +19,7 @@ You have to call hts_engine with the option -w to use the WORLD vocoder, otherwi
 *@misc{pucher2018,*<br/>
 *author = {Pucher, Michael},*<br/>
 *title = {Hts-engine-world: An integration of the WORLD vocoder and hts_engine API-1.10},*<br/>
-*year = {2018},*<br/>
+*year = {2019},*<br/>
 *publisher = {GitHub},*<br/>
 *journal = {GitHub repository},*<br/>
 *howpublished = \{\\url\{ https://github.com/mipuc/hts-engine-world \}\},*<br/>
