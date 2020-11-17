@@ -1,0 +1,15 @@
+# Ignore C
+*.o
+*.a
+bin/hts_engine
+
+# Ignore auto-tools
+Makefile
+Makefile.in
+aclocal.m4
+config.log
+config.status
+configure
+.deps
+INSTALL
+autom4te.cache/

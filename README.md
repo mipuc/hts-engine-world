@@ -4,25 +4,33 @@ This software contains an integration of the WORLD vocoder (https://github.com/m
 
 The main modification can be found in [lib/synthworld.cpp](lib/synthworld.cpp).
 
-Use
+## Installation
 
+Follow the classic sequence:
+
+```sh
+autoreconf --install
 ./configure
-
-and
-
 make
+```
 
-to create bin/hts_engine.
+at the end, the executable `bin/hts_engine` will be created
 
-You have to call hts_engine with the option -w to use the WORLD vocoder, otherwise the default vocoder will be used.
+## How to use
 
-*@misc{pucher2018,*<br/>
-*author = {Pucher, Michael},*<br/>
-*title = {Hts-engine-world: An integration of the WORLD vocoder and hts_engine API-1.10},*<br/>
-*year = {2018},*<br/>
-*publisher = {GitHub},*<br/>
-*journal = {GitHub repository},*<br/>
-*howpublished = \{\\url\{ https://github.com/mipuc/hts-engine-world \}\},*<br/>
-*}*
+You have to call hts_engine with the option -w to use the WORLD vocoder, otherwise the default MLSA vocoder will be used.
+
+## Reference
+
+```bibtex
+@Misc{pucher2018,
+  author       = "Michael Pucher",
+  title        = "Hts-engine-world: An integration of the WORLD vocoder and hts_engine API-1.10",
+  year         = "2018",
+  publisher    = "GitHub",
+  journal      = "GitHub repository",
+  howpublished = "\url{https://github.com/mipuc/hts-engine-world}",
+}
+```
 
 Michael Pucher michael.pucher@oeaw.ac.at

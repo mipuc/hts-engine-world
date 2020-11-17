@@ -62,7 +62,7 @@ typedef struct {
 	void WaveformSynthesis3(WorldParameters *world_parameters, int fs,
 		  int y_length, double *y);
 
-	int DestroyMemory();
+	void DestroyMemory();
 
 	int synthesizeWorld(HTS_GStreamSet * gss, int fs,size_t fperiod, double alpha);
 
